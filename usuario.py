@@ -18,7 +18,7 @@ class usuario():
         if myContra==self.contra:
             print("Se ha conectado con exito!")
             self.conectado = True 
-#password mala  a
+#password mala  
         else:
 #se pierde 1 intento cada vez que se ingrese mal 
             self.intentos-=1
