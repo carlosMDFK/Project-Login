@@ -1,11 +1,11 @@
 from tkinter import *
 from tkinter import ttk as ttk
 
-#ventana principal  a
+#ventana principal  
 root = Tk()
 root.title("Login Usuario")
 
-#mainFrame, contenido  o
+#mainFrame, contenido  
 mainFrame = Frame(root)
 mainFrame.pack()
 mainFrame.config(width=480, height=320)# bg="lightblue")
