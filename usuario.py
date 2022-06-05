@@ -13,18 +13,24 @@ class usuario():
 
         usuario.numUsuario+=1
 
-    def conectar(self):
-        myContra = input ("Ingrese su contraseña: ")
+    def conectar(self, contrasenia = None):
+        if contrasenia==None:
+            myContra = input ("Ingrese su contraseña: ")
+        else:
+            myContra=contrasenia
         if myContra==self.contra:
             print("Se ha conectado con exito!")
-            self.conectado = True 
-#password mala  
+            self.conectado = True
+            return True 
+#password mala   
         else:
 #se pierde 1 intento cada vez que se ingrese mal 
             self.intentos-=1
 #si quedan intentos, mostrar mensajes y pedir dnvo credenciales
             if self.intentos > 0:
                 print("Contraseña incorrecta, intentelo nuevamente...")
+                if contrasenia!=None:
+                    return False
                 print("Intentos restantes:",self.intentos)
                 self.conectar()
 #si ya no tienes intentos, salir de app
@@ -47,13 +53,13 @@ class usuario():
         return f"Mi nombre de usuario es {self.nombre} y estoy {conect}"
 
 #despues de crear usuario, se muestra el estado
-user1 = usuario(input("Ingrese un nombre: "), input("Ingrese una contraseña: "))
-print(user1)
+#user1 = usuario(input("Ingrese un nombre: "), input("Ingrese una contraseña: "))
+#print(user1)
 
 #estado conectado
-user1.conectar()
-print(user1)
+#user1.conectar()
+#print(user1)
 
 #estado desconectado
-user1.desconectar()
-print(user1)
+#user1.desconectar()
+#print(user1)
